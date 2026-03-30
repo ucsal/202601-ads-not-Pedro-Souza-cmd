@@ -29,7 +29,7 @@ public class AplicacaoProvaService {
         List<Questao> questoes = questaoService.buscarPorProva(provaId);
 
         if (questoes.isEmpty()){
-            throw new IllegalArgumentException("Prova não possui questões")
+            throw new IllegalArgumentException("Prova não possui questões");
         }
 
         Tentativa tentativa = new Tentativa();
@@ -60,9 +60,11 @@ public class AplicacaoProvaService {
 
         return tentativaSalva;
 
-        
     }
 
+    public List<Tentativa> listarTentativas() {
+        return tentativaRepository.listarTentativas();
+    }
 
 
 
