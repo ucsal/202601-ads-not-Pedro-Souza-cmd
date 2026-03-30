@@ -10,11 +10,7 @@ import br.com.ucsal.olimpiadas.repository.inMemory.InMemoryProvaRepository;
 import br.com.ucsal.olimpiadas.repository.inMemory.InMemoryQuestaoRepository;
 import br.com.ucsal.olimpiadas.repository.inMemory.InMemoryTentativaRepository;
 
-import br.com.ucsal.olimpiadas.service.ParticipanteService;
-import br.com.ucsal.olimpiadas.service.ProvaService;
-import br.com.ucsal.olimpiadas.service.QuestaoService;
-import br.com.ucsal.olimpiadas.service.AvaliacaoService;
-import br.com.ucsal.olimpiadas.service.AplicacaoProvaService;
+import br.com.ucsal.olimpiadas.service.*;
 
 import br.com.ucsal.olimpiadas.ui.MenuConsole;
 
@@ -49,6 +45,10 @@ public class App {
                 questaoService,
                 aplicacaoProvaService
         );
+
+        // ================= DATA LOADER =================
+        DataLoader dataLoader = new DataLoader(provaService, questaoService);
+        dataLoader.carregarDadosIniciais();
 
         // ================= START =================
         menu.iniciarMenu();

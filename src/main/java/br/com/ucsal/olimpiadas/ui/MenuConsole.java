@@ -136,7 +136,13 @@ public class MenuConsole {
         System.out.println("\n--- Início da Prova ---");
 
         for (var q : questoes) {
+
             System.out.println("\n" + q.getEnunciado());
+
+            if (q.getFenInicial() != null && !q.getFenInicial().isBlank()) {
+                System.out.println("Posição inicial:");
+                TabuleiroView.imprimirTabuleiroFen(q.getFenInicial());
+            }
 
             for (var alt : q.getAlternativas()) {
                 System.out.println(alt);
