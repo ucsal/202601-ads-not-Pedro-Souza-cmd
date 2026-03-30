@@ -7,13 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class App {
-
-	static long proximoParticipanteId = 1;
 	static long proximaProvaId = 1;
 	static long proximaQuestaoId = 1;
 	static long proximaTentativaId = 1;
 
-	static final List<Participante> participantes = new ArrayList<>();
 	static final List<Prova> provas = new ArrayList<>();
 	static final List<Questao> questoes = new ArrayList<>();
 	static final List<Tentativa> tentativas = new ArrayList<>();
@@ -48,26 +45,6 @@ public class App {
 		}
 	}
 
-	static void cadastrarParticipante() {
-		System.out.print("Nome: ");
-		var nome = in.nextLine();
-
-		System.out.print("Email (opcional): ");
-		var email = in.nextLine();
-
-		if (nome == null || nome.isBlank()) {
-			System.out.println("nome inválido");
-			return;
-		}
-
-		var p = new Participante();
-		p.setId(proximoParticipanteId++);
-		p.setNome(nome);
-		p.setEmail(email);
-
-		participantes.add(p);
-		System.out.println("Participante cadastrado: " + p.getId());
-	}
 
 	static void cadastrarProva() {
 		System.out.print("Título da prova: ");
