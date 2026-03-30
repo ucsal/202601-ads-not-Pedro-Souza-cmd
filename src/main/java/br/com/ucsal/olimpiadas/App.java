@@ -1,6 +1,9 @@
 package br.com.ucsal.olimpiadas;
 
-import model.*;
+import br.com.ucsal.olimpiadas.model.Prova;
+import br.com.ucsal.olimpiadas.model.Questao;
+import br.com.ucsal.olimpiadas.model.Resposta;
+import br.com.ucsal.olimpiadas.model.Tentativa;
 
 import java.util.ArrayList;
 import java.util.List;

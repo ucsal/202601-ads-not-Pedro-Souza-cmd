@@ -1,7 +1,7 @@
-package repository.inMemory;
+package br.com.ucsal.olimpiadas.repository.inMemory;
 
-import model.Participante;
-import repository.ParticipanteRepository;
+import br.com.ucsal.olimpiadas.model.Participante;
+import br.com.ucsal.olimpiadas.repository.ParticipanteRepository;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
-package repository;
+package br.com.ucsal.olimpiadas.repository;
 
 
-import model.Participante;
+import br.com.ucsal.olimpiadas.model.Participante;
 
 import java.util.List;
 
