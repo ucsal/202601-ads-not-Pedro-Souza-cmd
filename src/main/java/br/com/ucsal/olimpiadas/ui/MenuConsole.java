@@ -32,7 +32,7 @@ public class MenuConsole {
        this.aplicacaoProvaService = aplicacaoProvaService;
    }
 
-   public void IniciarMenu(){
+   public void iniciarMenu(){
        while (true) {
            System.out.println("\n=== OLIMPÍADA DE QUESTÕES (V3) ===");
            System.out.println("1) Cadastrar participante");
