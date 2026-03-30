@@ -1,37 +1,37 @@
 package service;
 
 import model.Participante;
+import repository.ParticipanteRepository;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class ParticipanteService {
 
-    private long proximoID = 1;
-    private final List<Participante> p = new ArrayList<>();
+    private final ParticipanteRepository repo;
+
+    public ParticipanteService(ParticipanteRepository repository){
+        this.repo = repository;
+    }
 
     public Participante cadastrarParticipante(String nome, String email){
         if (nome == null || nome.isBlank()){
             throw new IllegalArgumentException("Nome Invalido");
         }
 
-        Participante Participante = new Participante();
-        Participante.setId(proximoID++);
-        Participante.setNome(nome);
-        Participante.setEmail(email);
-        p.add(Participante);
+        Participante participante = new Participante();
+        participante.setNome(nome);
+        participante.setEmail(email);
 
-        return Participante;
+        return repo.salvar(participante);
+
     }
 
-    public List<Participante> listarPartiticpantes() {
-        return p;
+    public List<Participante> listarParticipante(){
+        return repo.listar();
     }
 
     public Participante buscarPorId(long id){
-        return p.stream()
-                .filter(p -> p.getId() == id)
-                .findFirst()
-                .orElse(null);
+        return repo.buscarPorId(id);
     }
 }
